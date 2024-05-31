@@ -1,5 +1,5 @@
 # bloxelodeoncable
- Bloxelodeon Cable HTML Code for the Bloxelodeon Cable TV Box
+ Bloxelodeon Cable HTML Code for the BloxelodeonCable website and upcoming Cable TV Box
 
 Code Written by Freecorn1854 (with the help of ChatGPT)
 

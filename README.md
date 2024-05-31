@@ -8,7 +8,7 @@ https://videojs.com/
 https://nginx.org/
 # ACCESS THE SERVICE HERE: https://freecorn1854.win/bloxcable/
 
-# copyright for non code assets:
+# Copyright for non code assets:
 
 © Bloxelcom 2024
 

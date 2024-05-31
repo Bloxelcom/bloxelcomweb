@@ -1,4 +1,4 @@
-# bloxelodeoncable
+# BloxelodeonCable
 HTML Code for BloxelodeonCable's website and upcoming cable TV box
 
 Code Written by Freecorn1854 (with the help of ChatGPT)

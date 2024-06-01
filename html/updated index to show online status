@@ -68,6 +68,10 @@
         li a:hover {
             text-decoration: underline;
         }
+        .status {
+            font-size: 1em;
+            margin-top: 10px;
+        }
         footer {
             position: absolute;
             bottom: 0;
@@ -79,6 +83,29 @@
             font-size: 1.2em;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const channels = [
+                { name: "Bloxelodeon USA", stream: "bloxusa", url: "https://freecorn1854.win/bloxcable/hls/BloxelodeonUSA.m3u8" },
+                { name: "Bloxelodeon Canada", stream: "bloxca", url: "https://freecorn1854.win/bloxcable/hls/BloxelodeonCA.m3u8" },
+                { name: "Bloxelodeon Netherlands", stream: "bloxnl", url: "https://freecorn1854.win/bloxcable/hls/BloxelodeonNL.m3u8" },
+                { name: "The Vore Channel", stream: "vore", url: "https://freecorn1854.win/bloxcable/hls/VoreChannel.m3u8" },
+                { name: "TV3", stream: "tv3", url: "https://freecorn1854.win/bloxcable/hls/TV3.m3u8" }
+            ];
+
+            channels.forEach(channel => {
+                const url = channel.url;
+                fetch(url, { method: 'HEAD' })
+                    .then(response => {
+                        const statusText = response.ok ? "ONLINE" : "OFFLINE";
+                        document.getElementById(`status-${channel.stream}`).innerText = statusText;
+                    })
+                    .catch(() => {
+                        document.getElementById(`status-${channel.stream}`).innerText = "OFFLINE";
+                    });
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -90,30 +117,35 @@
             <li>
                 <h2>Bloxelodeon USA</h2>
                 <span>Watch Now</span>
+                <span id="status-bloxusa" class="status">Checking...</span>
             </li>
         </a>
         <a href="channels/bloxca.html">
             <li>
                 <h2>Bloxelodeon Canada</h2>
                 <span>Watch Now</span>
+                <span id="status-bloxca" class="status">Checking...</span>
             </li>
         </a>
         <a href="channels/bloxnl.html">
             <li>
                 <h2>Bloxelodeon Netherlands</h2>
                 <span>Watch Now</span>
+                <span id="status-bloxnl" class="status">Checking...</span>
             </li>
         </a>
         <a href="vorewarning.html">
             <li>
                 <h2>The Vore Channel</h2>
                 <span>Watch Now</span>
+                <span id="status-vore" class="status">Checking...</span>
             </li>
         </a>
         <a href="channels/tv3.html">
             <li>
                 <h2>TV3</h2>
                 <span>Watch Now</span>
+                <span id="status-tv3" class="status">Checking...</span>
             </li>
         </a>
     </ul>

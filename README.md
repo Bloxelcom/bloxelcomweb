@@ -1,5 +1,5 @@
 # BloxelodeonCable
-HTML Code for BloxelodeonCable's website and upcoming cable TV box
+all resources related for BloxelodeonCable.
 
 Code Written by Freecorn1854 (with the help of ChatGPT)
 
@@ -8,4 +8,4 @@ https://videojs.com/
 https://nginx.org/
 # ACCESS THE SERVICE HERE: https://freecorn1854.win/bloxcable/
 
-Bloxelcom 2024
+Copyright Bloxelcom 2024

@@ -134,6 +134,7 @@
                 <span id="status-bloxnl" class="status">Checking...</span>
             </li>
         </a>
+<<<<<<< Updated upstream:html/updated index to show online status
         <a href="vorewarning.html">
             <li>
                 <h2>The Vore Channel</h2>
@@ -141,6 +142,8 @@
                 <span id="status-vore" class="status">Checking...</span>
             </li>
         </a>
+=======
+>>>>>>> Stashed changes:html/index.html
         <a href="channels/tv3.html">
             <li>
                 <h2>TV3</h2>

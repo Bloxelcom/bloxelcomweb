@@ -1,5 +1,5 @@
-# BloxelodeonCable
-all resources related for BloxelodeonCable.
+# BloxelcomCable
+all resources related for BloxelcomCable.
 
 Code Written by Freecorn1854 (with the help of ChatGPT)
 

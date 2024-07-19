@@ -44,11 +44,11 @@ ul {
 }
 
 li {
-    background: #50e07bAA; /* Color of buttons */
+    background: #00CD61; /* Color of buttons */
     margin: 1.25em;
     padding: 1em;
     border-radius: 0.625em;
-    box-shadow: 0 0.5em 1em #0000004D;
+    box-shadow: 0 0.5em 1em #000000D;
     text-align: center;
     font-size: 1.5em;
     width: 12em;

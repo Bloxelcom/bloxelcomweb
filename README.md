@@ -12,6 +12,12 @@ for powering the backend to BloxelcomCable.
 https://videojs.com/
 https://nginx.org/
 
-# ACCESS THE SERVICE [HERE.](https://bloxelcom.net/bloxcable)
+## ACCESS THE SERVICE [HERE.](https://bloxelcom.net/bloxcable)
+
+
+### Licensing
+This code is licensed under the GPLV3.
+Feel free to use, modify, and distribute the code
+without our banding. Our branding remains under copyright.
 
 Copyright Bloxelcom 2024

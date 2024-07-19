@@ -1,11 +1,17 @@
-# BloxelcomCable
-all resources related for BloxelcomCable.
+# Bloxelcom Webpages
+This repo contains all resources related to the
+Bloxelcom landing page, including BloxelcomCable.
 
-Code Written by Freecorn1854 (with the help of ChatGPT)
+Code Written initially written by 
+Freecorn1854 (with the help of ChatGPT), and
+continued and revised by Jimbo.
 
-special thanks to "video.js" and "nginx" for powering the backend to BloxelodeonCable, more info here:
+Special thanks to "video.js" and "nginx"
+for powering the backend to BloxelcomCable.
+
 https://videojs.com/
 https://nginx.org/
-# ACCESS THE SERVICE HERE: https://bloxelcom.net/bloxcable/
+
+# ACCESS THE SERVICE [HERE.](https://bloxelcom.net/bloxcable)
 
 Copyright Bloxelcom 2024

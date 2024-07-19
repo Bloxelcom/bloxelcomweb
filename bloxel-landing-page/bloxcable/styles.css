@@ -1,0 +1,94 @@
+body {
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(0deg, #15351c, #118e2a); /* Color of gradient */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 1.25em;
+}
+
+header img {
+    height: 5em;
+    margin-right: 1.25em;
+    border-radius: 0.625em;
+    box-shadow: 0 0.5em 1em #0000004D;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+    text-shadow: 0.125em 0.125em 0.25em #00000080;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.25em;
+}
+
+ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+li {
+    background: #50e07bAA; /* Color of buttons */
+    margin: 1.25em;
+    padding: 1em;
+    border-radius: 0.625em;
+    box-shadow: 0 0.5em 1em #0000004D;
+    text-align: center;
+    font-size: 1.5em;
+    width: 12em;
+    height: 12em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    transition: transform 0.3s ease-in-out; /* Apply transition to the initial state */
+}
+
+li:hover {
+    transform: translateY(-0.3125em);
+}
+
+li a {
+    text-decoration: none;
+    color: inherit; /* Inherits the color from li */
+    display: block;
+    font-size: 1em;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+.status {
+    font-size: 1em;
+    margin-top: 0.625em;
+}
+
+li.bloxeleste {
+    background: #006BC8;
+}
+
+li.bloxelesteanime {
+    background: #D9BFFF;
+}
+
+li.tv3 {
+    background: #adeed6;
+    color: black;
+}

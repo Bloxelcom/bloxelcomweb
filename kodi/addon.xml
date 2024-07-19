@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="bloxelodeon.video.cable"
+<addon id="bloxelcom.video.cable"
 version="1.0"
-name="BloxelodeonCable"
+name="BloxelcomCable"
 provider-name="Freecorn1854, Roman_V_M (OG Project)">
 <requires>
   <import addon="xbmc.python" version="3.0.1"/>
@@ -10,8 +10,8 @@ provider-name="Freecorn1854, Roman_V_M (OG Project)">
   <provides>video</provides>
 </extension>
 <extension point="xbmc.addon.metadata">
-  <summary lang="en_GB">BloxelodeonCable addon for Kodi</summary>
-  <description lang="en_GB">BloxelodeonCable programming for the Kodi program</description>
+  <summary lang="en_GB">BloxelcomCable addon for Kodi</summary>
+  <description lang="en_GB">BloxelcomCable programming for the Kodi program</description>
   <disclaimer lang="en_GB">Copyright Bloxelcom 2024.</disclaimer>
   <license>GPL-3.0-only	</license>
   <assets>

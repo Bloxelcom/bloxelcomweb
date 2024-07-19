@@ -1,6 +1,4 @@
 # chatgpt goes to the rescue again :3
-# chatgpt goes to the rescue again :3
-
 import os
 import sys
 from urllib.parse import urlencode, parse_qsl
@@ -22,33 +20,45 @@ FANART_DIR = os.path.join(ADDON_PATH, 'resources', 'images', 'fanart')
 # Video data
 VIDEOS = [
     {
-        'channel': 'Bloxelodeon',
-        'icon': os.path.join(ICONS_DIR, 'Bloxelodeon.png'),
-        'fanart': os.path.join(FANART_DIR, 'Bloxelodeon.jpg'),
+        'channel': 'Bloxeleste',
+        'icon': os.path.join(ICONS_DIR, 'bloxeleste.png'),
+        'fanart': os.path.join(FANART_DIR, 'bloxeleste.jpg'),
         'channels': [
             {
-                'title': 'Bloxelodeon USA',
-                'url': 'https://freecorn1854.win/bloxcable/hls/BloxelodeonUSA.m3u8',
-                'poster': 'https://freecorn1854.win/bloxelodeon/kodi/bloxposter.png',
-                'description': 'Bloxelodeon USA content stream.'
+                'title': 'Bloxeleste',
+                'url': 'https://www.bloxelcom.net/bloxcable/hls/Bloxeleste.m3u8',
+                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/bloxposter.png',
+                'description': 'Bloxeleste content stream.'
             },
             {
-                'title': 'Bloxelodeon Canada',
-                'url': 'https://freecorn1854.win/bloxcable/hls/BloxelodeonCA.m3u8',
-                'poster': 'https://freecorn1854.win/bloxelodeon/kodi/bloxposter.png',
-                'description': 'Bloxelodeon Canada content stream.'
+                'title': 'Bloxeleste Anime',
+                'url': 'https://www.bloxelcom.net/bloxcable/hls/BloxelesteAnime.m3u8',
+                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/bloxposter.png',
+                'description': 'Bloxeleste Anime content stream.'
             },
             {
-                'title': 'Bloxelodeon Anime',
-                'url': 'https://freecorn1854.win/bloxcable/hls/BloxelodeonAnime.m3u8',
-                'poster': 'https://freecorn1854.win/bloxelodeon/kodi/bloxposter.png',
-                'description': 'Bloxelodeon Anime content stream.'
+                'title': 'Bloxeleste Polska',
+                'url': 'https://www.bloxelcom.net/bloxcable/hls/BloxelestePL.m3u8',
+                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/bloxposter.png',
+                'description': 'Bloxeleste Polska content stream.'
+            },
+            {
+                'title': 'TV10 (Español)',
+                'url': 'https://www.bloxelcom.net/bloxcable/hls/TV10.m3u8',
+                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/bloxposter.png',
+                'description': 'TV10 content stream.'
             },
             {
                 'title': 'TV3',
-                'url': 'https://freecorn1854.win/bloxcable/hls/TV3.m3u8',
-                'poster': 'https://freecorn1854.win/bloxelodeon/kodi/tv3poster.png',
+                'url': 'https://www.bloxelcom.net/bloxcable/hls/TV3.m3u8',
+                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/tv3poster.png',
                 'description': 'TV3 content stream.'
+            },
+            {
+                'title': 'Airbenz TV (Français)',
+                'url': 'https://www.bloxelcom.net/bloxcable/hls/AirbenzTV.m3u8',
+                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/bloxposter.png',
+                'description': 'Airbenz TV content stream.'
             },
         ],
     },
@@ -76,7 +86,7 @@ def list_channels():
     """
     Create the list of channel channels in the Kodi interface.
     """
-    xbmcplugin.setPluginCategory(HANDLE, 'Bloxelodeon Shows!')
+    xbmcplugin.setPluginCategory(HANDLE, 'Bloxelcom Shows!')
     xbmcplugin.setContent(HANDLE, 'channels')
 
     channels = get_channels()

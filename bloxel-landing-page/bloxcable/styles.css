@@ -84,8 +84,16 @@ li.bloxeleste {
     background: #006BC8;
 }
 
+li.bloxelestecanada {
+    background: #FF0000;
+}
+
 li.bloxelesteanime {
     background: #D9BFFF;
+}
+
+li.tv10 {
+    background: #FAA357;
 }
 
 li.tv3 {

@@ -3,9 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(0deg, #15351c, #118e2a); /* Color of gradient */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    text-align: center;
     color: white;
 }
 

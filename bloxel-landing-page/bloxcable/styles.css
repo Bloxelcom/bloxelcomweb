@@ -1,10 +1,17 @@
-body {
-    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
     background: linear-gradient(0deg, #15351c, #118e2a); /* Color of gradient */
     text-align: center;
     color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -32,6 +39,7 @@ main {
     flex-wrap: wrap;
     justify-content: center;
     padding: 1.25em;
+    min-height: calc(100vh - 200px); /* Adjust as needed */
 }
 
 ul {

@@ -23,7 +23,7 @@ VIDEOS = [
     {
         'channel': 'Bloxeleste',
         'icon': os.path.join(ICONS_DIR, 'bloxeleste.png'),
-        'fanart': os.path.join(FANART_DIR, 'bloxeleste.jpg'),
+        'fanart': os.path.join(FANART_DIR, 'fanart.png'),
         'channels': [
             {
                 'title': 'Bloxeleste US',

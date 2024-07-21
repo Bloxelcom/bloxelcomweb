@@ -16,10 +16,7 @@ provider-name="Freecorn1854, Jimbo, Roman_V_M (OG Project)">
   <license>GPL-3.0-only	</license>
   <assets>
     <icon>resources/images/icon.png</icon>
-    <fanart>resources/images/fanart.jpg</fanart>
-	<screenshot>resources/images/screenshot-1.png</screenshot>
-    <screenshot>resources/images/screenshot-2.png</screenshot>
-	<screenshot>resources/images/screenshot-3.png</screenshot>
+    <fanart>resources/images/fanart.png</fanart>
 
   </assets>
 </extension>

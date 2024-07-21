@@ -21,7 +21,7 @@ POSTER_DIR = os.path.join(ADDON_PATH, 'resources', 'images', 'poster')
 # Video data
 VIDEOS = [
     {
-        'channel': 'Bloxeleste',
+        'channel': 'BloxelcomCable',
         'icon': os.path.join(ICONS_DIR, 'bloxeleste.png'),
         'fanart': os.path.join(FANART_DIR, 'fanart.png'),
         'channels': [

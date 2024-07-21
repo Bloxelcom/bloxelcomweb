@@ -16,6 +16,7 @@ HANDLE = int(sys.argv[1])
 ADDON_PATH = translatePath(Addon().getAddonInfo('path'))
 ICONS_DIR = os.path.join(ADDON_PATH, 'resources', 'images', 'icons')
 FANART_DIR = os.path.join(ADDON_PATH, 'resources', 'images', 'fanart')
+POSTER_DIR = os.path.join(ADDON_PATH, 'resources', 'images', 'poster')
 
 # Video data
 VIDEOS = [
@@ -25,40 +26,34 @@ VIDEOS = [
         'fanart': os.path.join(FANART_DIR, 'bloxeleste.jpg'),
         'channels': [
             {
-                'title': 'Bloxeleste',
+                'title': 'Bloxeleste US',
                 'url': 'https://www.bloxelcom.net/bloxcable/hls/Bloxeleste.m3u8',
-                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/bloxposter.png',
-                'description': 'Bloxeleste content stream.'
+                'poster': os.path.join(POSTER_DIR, 'bloxeleste.png'),
+                'description': 'Bloxeleste US content stream.'
+            },
+            {
+                'title': 'Bloxeleste Canada',
+                'url': 'https://www.bloxelcom.net/bloxcable/hls/BloxelesteCA.m3u8',
+                'poster': os.path.join(POSTER_DIR, 'bloxelesteca.png'),
+                'description': 'Bloxeleste Canada content stream.'
             },
             {
                 'title': 'Bloxeleste Anime',
                 'url': 'https://www.bloxelcom.net/bloxcable/hls/BloxelesteAnime.m3u8',
-                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/bloxposter.png',
+                'poster': os.path.join(POSTER_DIR, 'bloxelesteanime.png'),
                 'description': 'Bloxeleste Anime content stream.'
-            },
-            {
-                'title': 'Bloxeleste Polska',
-                'url': 'https://www.bloxelcom.net/bloxcable/hls/BloxelestePL.m3u8',
-                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/bloxposter.png',
-                'description': 'Bloxeleste Polska content stream.'
             },
             {
                 'title': 'TV10 (Español)',
                 'url': 'https://www.bloxelcom.net/bloxcable/hls/TV10.m3u8',
-                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/bloxposter.png',
+                'poster': os.path.join(POSTER_DIR, 'tv10.png'),
                 'description': 'TV10 content stream.'
             },
             {
                 'title': 'TV3',
                 'url': 'https://www.bloxelcom.net/bloxcable/hls/TV3.m3u8',
-                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/tv3poster.png',
+                'poster': os.path.join(POSTER_DIR, 'tv3.png'),
                 'description': 'TV3 content stream.'
-            },
-            {
-                'title': 'Airbenz TV (Français)',
-                'url': 'https://www.bloxelcom.net/bloxcable/hls/AirbenzTV.m3u8',
-                'poster': 'https://www.bloxelcom.net/bloxelcom/kodi/bloxposter.png',
-                'description': 'Airbenz TV content stream.'
             },
         ],
     },

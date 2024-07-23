@@ -8,7 +8,7 @@
    version="1.1"
    id="svg1"
    xml:space="preserve"
-   sodipodi:docname="bloxelcontractorwatermark.svg"
+   sodipodi:docname="BloxelesteExtrasWatermark.svg"
    inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
    inkscape:export-filename="../../../../../Downloads/bloxelcontractorwatermark.png"
    inkscape:export-xdpi="50"
@@ -30,9 +30,9 @@
      showguides="false"
      inkscape:zoom="0.57616108"
      inkscape:cx="423.49268"
-     inkscape:cy="505.06709"
+     inkscape:cy="505.9349"
      inkscape:window-width="1920"
-     inkscape:window-height="1040"
+     inkscape:window-height="1059"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
@@ -62,7 +62,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"><rect
-       style="fill:#e48005;fill-opacity:1;stroke:#ffffff;stroke-width:35.0713;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#f97230;fill-opacity:1;stroke:#ffffff;stroke-width:35.0713;stroke-dasharray:none;stroke-opacity:1"
        id="rect1"
        width="822.33746"
        height="815.9411"
@@ -71,7 +71,8 @@
        transform="matrix(0.70657664,0.70763653,-0.70657664,0.70763653,0,0)"
        ry="137.50092" /><g
        id="g1"
-       transform="matrix(0.68619383,0,0,0.68619383,169.72819,169.02634)"><path
+       transform="matrix(0.68619383,0,0,0.68619383,169.72819,169.02634)"
+       inkscape:label="g1"><path
          style="display:inline;fill:#e6e624;fill-opacity:1;stroke:none;stroke-width:32.8717;stroke-linecap:butt;stroke-linejoin:bevel;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers fill stroke"
          d="m 397.88296,56.842804 c -111.341,53.357636 -209.87061,463.305206 156.07751,479.412186 0,0 57.61638,-97.46115 207.00544,-142.44299 149.38905,-44.98193 286.50749,274.7461 293.91169,226.32311 7.4042,-48.42291 -19.8839,-303.0187 -63.59364,-364.23944 C 947.57416,194.67494 758.62806,60.498544 705.72694,47.721424 652.82578,34.944234 509.2238,3.4852136 397.88296,56.842804 Z"
          id="path5-3-5-2-7-6"

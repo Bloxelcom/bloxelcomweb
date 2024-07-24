@@ -12,7 +12,7 @@ for powering the backend to BloxelcomCable.
 https://videojs.com/
 https://nginx.org/
 
-## Access Bloxelcom's landing page [here](https://www.bloxelcom.net), and BloxelcomCable [here.](https://bloxelcom.net/bloxcable)
+## Access Bloxelcom's landing page [here](https://www.bloxelcom.net), and BloxelcomCable [here.](https://www.bloxelcom.net/BloxelcomCable/)
 
 
 ### Licensing

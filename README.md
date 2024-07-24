@@ -21,6 +21,7 @@ Feel free to use, modify, and distribute the code
 without our banding. Our branding remains under copyright.
 
 for outlines of usage of the logos, check here:
+https://github.com/Bloxelcom/bloxelcomweb/blob/main/Logos/LICENSE
 
 
 Copyright Bloxelcom 2024.

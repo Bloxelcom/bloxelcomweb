@@ -20,4 +20,7 @@ This code is licensed under the GPLV3.
 Feel free to use, modify, and distribute the code
 without our banding. Our branding remains under copyright.
 
+for outlines of usage of the logos, check here:
+
+
 Copyright Bloxelcom 2024.

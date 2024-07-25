@@ -6,12 +6,12 @@ Code Written initially written by
 Freecorn1854 (with the help of ChatGPT), and
 continued and revised by Jimbo.
 
-Special thanks to "video.js" and "nginx"
+Special thanks to "video.js", "nginx", and OBS
 for powering the backend to BloxelcomCable.
 
 https://videojs.com/
 https://nginx.org/
-
+https://obsproject.com/
 ## Access Bloxelcom's landing page [here](https://www.bloxelcom.net), and BloxelcomCable [here.](https://www.bloxelcom.net/BloxelcomCable/)
 
 

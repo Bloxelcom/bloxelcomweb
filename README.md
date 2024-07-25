@@ -6,7 +6,7 @@ Code Written initially written by
 Freecorn1854 (with the help of ChatGPT), and
 continued and revised by Jimbo.
 
-Special thanks to "video.js", "nginx", and OBS
+Special thanks to "video.js", "nginx", and "OBS"
 for powering the backend to BloxelcomCable.
 
 https://videojs.com/

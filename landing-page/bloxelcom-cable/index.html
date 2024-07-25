@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta property="og:title" content="Bloxelcom Cable">
+<meta property="og:description" content="All of Bloxelcom's provided and partnered channels.">
+<meta property="og:image" content="https://www.bloxelcom.net/images/logos/bloxelcom-cable.png">
+<meta property="og:url" content="https://www.bloxelcom.net/bloxelcom-cable">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxelcom Cable TV Channels</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const channels = [
+                { name: "Bloxeleste (WBLX-TV)", stream: "bloxeleste", url: "hls/Bloxeleste.m3u8" },
+                { name: "Bloxeleste Canada (CBLX-TV)", stream: "bloxelestecanada", url: "hls/BloxelesteCA.m3u8" },
+		{ name: "Bloxeleste Extras", stream: "bloxelesteextras", url: "hls/BloxelesteExtras.m3u8" },
+                { name: "Bloxeleste Anime (ブロクセレストアニメ)", stream: "bloxelesteanime", url: "hls/BloxelesteAnime.m3u8" },
+                { name: "TV10", stream: "tv10", url: "hls/TV10.m3u8" },
+                { name: "TV3", stream: "tv3", url: "hls/TV3.m3u8" },
+            ];
+
+            channels.forEach(channel => {
+                const url = channel.url;
+                fetch(url, { method: 'HEAD' })
+                    .then(response => {
+                        const statusText = response.ok ? "ONLINE" : "OFFLINE";
+                        document.getElementById(`status-${channel.stream}`).innerText = statusText;
+                    })
+                    .catch(() => {
+                        document.getElementById(`status-${channel.stream}`).innerText = "OFFLINE";
+                    });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <a href="/" class="app-icon-link">
+            <img src="/images/text-logos/bloxelcom-cable-text.png" alt="Logo">
+        </a>
+        <h1>List of TV Channels</h1>
+    </header>
+    <ul>
+        <a href="channels/bloxeleste">
+            <li class="bloxeleste">
+                <h2>Bloxeleste USA (WBLX-TV)</h2>
+                <span>Watch Now</span>
+                <span id="status-bloxeleste" class="status">Checking...</span>
+            </li>
+        </a>
+        <a href="channels/bloxeleste-ca">
+            <li class="bloxelestecanada">
+                <h2>Bloxeleste Canada (CBLX-TV)</h2>
+                <span>Watch Now</span>
+                <span id="status-bloxelestecanada" class="status">Checking...</span>
+            </li>
+        </a>
+        <a href="Channels/bloxeleste-extras">
+            <li class="bloxelesteextras">
+                <h2>Bloxeleste Extras</h2>
+                <span>Watch Now</span>
+                <span id="status-bloxelesteextras" class="status">Checking...</span>
+            </li>
+        </a>
+        <a href="channels/bloxeleste-anime">
+            <li class="bloxelesteanime">
+                <h2>Bloxeleste Anime (ブロクセレストアニメ)</h2>
+                <span>Watch Now/今見る</span>
+                <span id="status-bloxelesteanime" class="status">Checking...</span>
+            </li>
+        </a>
+        <a href="https://dlive.tv/BloxelestePolska">
+            <li class="bloxelestepl">
+                <h2>Bloxeleste Polska</h2>
+                <span>Patrz teraz</span>
+                <span id="status-bloxelestepl" class="status">Serwer zewnętrzny</span>
+            </li>
+        </a>
+        <a href="channels/tv10">
+            <li class="tv10">
+                <h2>TV10 (Español)</h2>
+                <span>Ver ahora</span>
+                <span id="status-tv10" class="status">Checking...</span>
+            </li>
+        </a>
+        <a href="channels/tv3">
+            <li class="tv3">
+                <h2>TV3</h2>
+                <span>Watch Now</span>
+                <span id="status-tv3" class="status">Checking...</span>
+            </li>
+        </a>
+        <a href="https://dlive.tv/lionvert">
+            <li class="airbenz">
+                <h2>Airbenz TV (Français)</h2>
+                <span>Regarde maintenant</span>
+                <span id="status-airbenz" class="status">Serveur externe</span>
+            </li>
+        </a>
+    </ul>
+    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info <a href="/legal">here.</a></footer>
+</body>
+</html>

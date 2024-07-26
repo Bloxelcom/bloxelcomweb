@@ -96,6 +96,10 @@ main {
     background: linear-gradient(145deg, #f25555, #c91e1e);
 }
 
+.app-icon.orange {
+    background: linear-gradient(145deg, #f2b06f, #fc771e);
+}
+
 .app-icon.blue {
     background: linear-gradient(145deg, #1a94b8, #2c67f2);
 }

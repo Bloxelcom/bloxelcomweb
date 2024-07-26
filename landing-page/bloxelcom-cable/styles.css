@@ -30,7 +30,7 @@ header img {
     border-radius: 0.625em;
 }
 
-a {
+a.button-container {
     text-decoration: none; /* Removes the underline from links */
 }
 

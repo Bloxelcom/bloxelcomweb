@@ -14,6 +14,13 @@ https://nginx.org/
 https://obsproject.com/
 ## Access Bloxelcom's landing page [here](https://www.bloxelcom.net), and BloxelcomCable [here.](https://www.bloxelcom.net/BloxelcomCable/)
 
+# Contribute to the project!
+
+make sure you only commit to the "staging" branch, if you commit to main,
+we are going to have a bad time. main is the stable release shown on
+bloxelcom.net while staging is unstable.
+
+
 
 ### Licensing
 This program is free software: you can redistribute it and/or modify
@@ -33,7 +40,7 @@ You are not allowed to distribute this program with our banding. Our branding
 remains under copyright.
 
 for outlines of usage of the logos, check here:
-https://github.com/Bloxelcom/bloxelcomweb/blob/main/logos/LICENSE
+https://github.com/Bloxelcom/bloxelcomweb/blob/main/Logos/LICENSE
 
 
 Copyright (C) Bloxelcom 2024.

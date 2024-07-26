@@ -3,7 +3,9 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: black;
+    background: linear-gradient(0deg, #0086ff, #004686) no-repeat center center fixed; /* Color of gradient */
+    background-attachment: fixed;
+    background-size: cover;
     font-size: 16px; /* Establish a base font size */
 }
 

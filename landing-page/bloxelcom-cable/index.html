@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta property="og:title" content="Bloxelcom Cable">
-<meta property="og:description" content="All of Bloxelcom's provided and partnered channels.">
-<meta property="og:image" content="https://www.bloxelcom.net/images/logos/bloxelcom-cable.png">
-<meta property="og:url" content="https://www.bloxelcom.net/bloxelcom-cable">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,27 +7,86 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="/footer.css">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta property="og:title" content="Bloxelcom Cable">
+    <meta property="og:description" content="All of Bloxelcom's provided and partnered channels.">
+    <meta property="og:image" content="https://www.bloxelcom.net/images/logos/bloxelcom-cable.png">
+    <meta property="og:url" content="https://www.bloxelcom.net/bloxelcom-cable">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const channels = [
                 { name: "Bloxeleste (WBLX-TV)", stream: "bloxeleste", url: "hls/Bloxeleste.m3u8" },
-                { name: "Bloxeleste Canada (CBLX-TV)", stream: "bloxelestecanada", url: "hls/BloxelesteCA.m3u8" },
-                { name: "Bloxeleste Extras", stream: "bloxelesteextras", url: "hls/BloxelesteExtras.m3u8" },
-                { name: "Bloxeleste Anime (ブロクセレストアニメ)", stream: "bloxelesteanime", url: "hls/BloxelesteAnime.m3u8" },
+                { name: "Bloxeleste Canada (CBLX-TV)", stream: "bloxeleste-ca", url: "hls/BloxelesteCA.m3u8" },
+                { name: "Bloxeleste Anime (ブロクセレストアニメ)", stream: "bloxeleste-anime", url: "hls/BloxelesteAnime.m3u8" },
+                { name: "Bloxeleste Toronto", stream: "bloxeleste-toronto", url: "hls/BloxelesteToronto.m3u8" },
                 { name: "TV10", stream: "tv10", url: "hls/TV10.m3u8" },
                 { name: "TV3", stream: "tv3", url: "hls/TV3.m3u8" },
             ];
 
+            // Map each button to its URL
+            const buttonUrls = {
+                "bloxeleste": "./channels/bloxeleste",
+                "bloxeleste-ca": "./channels/bloxeleste-ca",
+                "bloxeleste-anime": "./channels/bloxeleste-anime",
+                "bloxeleste-toronto": "./channels/bloxeleste-toronto",
+                "tv10": "./channels/tv10",
+                "tv3": "./channels/tv3",
+            };
+
+            const iframe = document.querySelector('iframe');
+
+            // Function to update the iframe and URL
+            function updateChannel(stream) {
+                const url = buttonUrls[stream] || 'about:blank';
+                iframe.src = url;
+                history.pushState(null, '', `?channel=${stream}`);
+                
+                // Remove 'selected' class from all buttons
+                document.querySelectorAll('.custom-button').forEach(button => {
+                    button.classList.remove('selected');
+                });
+
+                // Add 'selected' class to the clicked button
+                const button = document.querySelector(`.custom-button.${stream}`);
+                button.classList.add('selected');
+            }
+
+            // Function to check stream availability
+            function checkStreams() {
+                channels.forEach(channel => {
+                    const button = document.querySelector(`.custom-button.${channel.stream}`);
+                    fetch(channel.url, { method: 'HEAD' })
+                        .then(response => {
+                            if (response.ok) {
+                                button.classList.remove('button-offline');
+                            } else {
+                                button.classList.add('button-offline');
+                            }
+                        })
+                        .catch(() => {
+                            button.classList.add('button-offline');
+                        });
+                });
+            }
+
+            // Initial check
+            checkStreams();
+
+            // Set interval to check every 10 seconds
+            setInterval(checkStreams, 10000);
+
+            // Check if a channel is specified in the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const channel = urlParams.get('channel');
+            if (channel && buttonUrls[channel]) {
+                updateChannel(channel);
+            }
+
             channels.forEach(channel => {
-                const url = channel.url;
-                fetch(url, { method: 'HEAD' })
-                    .then(response => {
-                        const statusText = response.ok ? "ONLINE" : "OFFLINE";
-                        document.getElementById(`status-${channel.stream}`).innerText = statusText;
-                    })
-                    .catch(() => {
-                        document.getElementById(`status-${channel.stream}`).innerText = "OFFLINE";
-                    });
+                const button = document.querySelector(`.custom-button.${channel.stream}`);
+                button.addEventListener('click', function() {
+                    updateChannel(channel.stream);
+                });
             });
         });
     </script>
@@ -43,64 +98,77 @@
         </a>
         <h1>List of TV Channels</h1>
     </header>
-    <ul>
-        <a href="channels/bloxeleste">
-            <li class="bloxeleste">
-                <h2>Bloxeleste USA (WBLX-TV)</h2>
-                <span>Watch Now</span>
-                <span id="status-bloxeleste" class="status">Checking...</span>
-            </li>
-        </a>
-        <a href="channels/bloxeleste-ca">
-            <li class="bloxelestecanada">
-                <h2>Bloxeleste Canada (CBLX-TV)</h2>
-                <span>Watch Now</span>
-                <span id="status-bloxelestecanada" class="status">Checking...</span>
-            </li>
-        </a>
-        <a href="channels/bloxeleste-extras">
-            <li class="bloxelesteextras">
-                <h2>Bloxeleste Extras</h2>
-                <span>Watch Now</span>
-                <span id="status-bloxelesteextras" class="status">Checking...</span>
-            </li>
-        </a>
-        <a href="channels/bloxeleste-anime">
-            <li class="bloxelesteanime">
-                <h2>Bloxeleste Anime (ブロクセレストアニメ)</h2>
-                <span>Watch Now/今見る</span>
-                <span id="status-bloxelesteanime" class="status">Checking...</span>
-            </li>
-        </a>
+    <div class="button-container">
+        <button class="custom-button bloxeleste">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/logos/bloxeleste.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">Bloxeleste</span>
+                <span class="button-subtext">WBLX-TV CH1</span>
+            </div>
+        </button>
+        <button class="custom-button bloxeleste-ca">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/logos/bloxeleste-canada.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">Bloxeleste Canada</span>
+                <span class="button-subtext">CBLX-TV CH2</span>
+            </div>
+        </button>
+        <button class="custom-button bloxeleste-anime">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/svgs/bloxeleste-anime.svg" style="width: 4.3em; height: auto;">
+                <span class="button-text">ブロクセレストアニメ</span>
+                <span class="button-subtext">Bloxeleste Anime CH3</span>
+            </div>
+        </button>
+        <button class="custom-button bloxeleste-toronto">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/logos/bloxeleste-toronto.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">Bloxeleste Toronto</span>
+                <span class="button-subtext">CH4</span>
+            </div>
+        </button>
         <a href="https://dlive.tv/BloxelestePolska">
-            <li class="bloxelestepl">
-                <h2>Bloxeleste Polska</h2>
-                <span>Patrz teraz</span>
-                <span id="status-bloxelestepl" class="status">Serwer zewnętrzny</span>
-            </li>
+            <button class="custom-button bloxeleste-polska">
+                <div class="color-part"></div>
+                <div class="button-content">
+                <img class="button-image" src="/images/unsorted/old-logos/bloxelodeon.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                    <span class="button-text">Bloxeleste Polska</span>
+                    <span class="button-subtext">(Zewnętrzny) CH5</span>
+                </div>
+            </button>
         </a>
-        <a href="channels/tv10">
-            <li class="tv10">
-                <h2>TV10 (Español)</h2>
-                <span>Ver ahora</span>
-                <span id="status-tv10" class="status">Checking...</span>
-            </li>
-        </a>
-        <a href="channels/tv3">
-            <li class="tv3">
-                <h2>TV3</h2>
-                <span>Watch Now</span>
-                <span id="status-tv3" class="status">Checking...</span>
-            </li>
-        </a>
+        <button class="custom-button tv10">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/partners/tv10.png" alt="Button Logo" style="width: 8em; height: auto;">
+                <span class="button-text">TV10</span>
+                <span class="button-subtext">Español CH6</span>
+            </div>
+        </button>
+        <button class="custom-button tv3">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/partners/tv3.png" alt="Button Logo" style="width: 8em; height: auto;">
+                <span class="button-text">TV3</span>
+                <span class="button-subtext">CH7</span>
+            </div>
+        </button>
         <a href="https://dlive.tv/lionvert">
-            <li class="airbenz">
-                <h2>Airbenz TV (Français)</h2>
-                <span>Regarde maintenant</span>
-                <span id="status-airbenz" class="status">Serveur externe</span>
-            </li>
+            <button class="custom-button airbenz">
+                <div class="color-part"></div>
+                <div class="button-content">
+                    <img class="button-image" src="/images/partners/airbenz.webp" alt="Button Logo">
+                    <span class="button-text">Airbenz TV</span>
+                    <span class="button-subtext">Français (Externe) CH8</span>
+                </div>
+            </button>
         </a>
-    </ul>
+    </div>
+    <iframe src="about:blank" id="channel-frame"></iframe>
     <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info <a href="/legal">here.</a></footer>
 </body>
 </html>

@@ -1,10 +1,11 @@
-body {
+html, body {
     font-family: 'Orbitron', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #333;
     text-align: center;
     color: white;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .container {
@@ -15,27 +16,29 @@ body {
     min-height: 100vh;
     padding: 1.25em;
     box-sizing: border-box;
+    width: 100%;
 }
 
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin-bottom: 1.875em;
+    width: 100%; /* Ensure header takes full width */
+    padding: 0 1em; /* Add horizontal padding */
 }
 
 .logo-container {
     width: 80%;
     max-width: 44em;
+    display: flex;
+    justify-content: center; /* Center logo inside the container */
+    margin: 0 auto; /* Center container itself */
 }
 
-.mainlogo {
-    width: 100%;
-    height: auto;
-}
-
-.sublogo {
-    width: 100%;
+.mainlogo, .sublogo {
+    max-width: 100%; /* Scale down if necessary */
     height: auto;
 }
 
@@ -93,6 +96,10 @@ main {
     background: linear-gradient(145deg, #f25555, #c91e1e);
 }
 
+.app-icon.orange {
+    background: linear-gradient(145deg, #f2b06f, #fc771e);
+}
+
 .app-icon.blue {
     background: linear-gradient(145deg, #1a94b8, #2c67f2);
 }
@@ -113,4 +120,25 @@ main {
 .app-icon.contact {
     background: linear-gradient(145deg, #ffffff, #dbdbdb);
     color: black;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .logo-container {
+        width: 90%;
+    }
+
+    .mainlogo, .sublogo {
+        max-width: 90%; /* Scale down logo */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        width: 95%;
+    }
+
+    .mainlogo, .sublogo {
+        max-width: 80%; /* Scale down more for smaller screens */
+    }
 }

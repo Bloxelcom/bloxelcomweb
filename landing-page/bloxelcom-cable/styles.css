@@ -10,6 +10,7 @@ body {
     overflow-x: hidden;
     height: 100vh; /* Full viewport height */
     background: linear-gradient(0deg, #15351c, #118e2a) no-repeat center center fixed;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
     color: white;
 }
 

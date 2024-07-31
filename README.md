@@ -40,7 +40,7 @@ You are not allowed to distribute this program with our banding. Our branding
 remains under copyright.
 
 for outlines of usage of the logos, check here:
-https://github.com/Bloxelcom/bloxelcomweb/blob/main/Logos/LICENSE
+https://github.com/Bloxelcom/bloxelcomweb/blob/main/logos/LICENSE
 
 
 Copyright (C) Bloxelcom 2024.

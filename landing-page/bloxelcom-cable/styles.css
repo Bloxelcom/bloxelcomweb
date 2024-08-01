@@ -8,10 +8,11 @@ body {
     align-items: center; /* Center horizontally */
     margin: 0; /* Remove default margin */
     overflow-x: hidden;
-    height: 100vh; /* Full viewport height */
+    min-height: 100vh; /* Minimum height to ensure it covers the viewport */
     background: linear-gradient(0deg, #15351c, #118e2a) no-repeat center center fixed;
     font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
     color: white;
+    padding-bottom: 2em; /* Add some padding to ensure space for footer */
 }
 
 header {
@@ -74,12 +75,13 @@ a.button-container {
 /* Color classes for buttons */
 .bloxeleste .color-part { background-color: #006BC8; }
 .bloxeleste-ca .color-part { background-color: #D80038; }
-.bloxeleste-toronto .color-part { background-color: #F54E31; }
+.bloxeleste-gaming .color-part { background-color: #F54E31; }
 .bloxeleste-anime .color-part { background-color: #D9BFFF; }
 .bloxeleste-polska .color-part { background-color: #F00; }
 .tv10 .color-part { background-color: #FAA357; }
 .tv3 .color-part { background-color: #47e5ab; }
-.airbenz .color-part { background-color: #ED761A; }
+.airbenzexternal .color-part { background-color: #ED761A; }
+.airbenzhls .color-part { background-color: #ED761A; }
 
 .color-part {
     width: calc(1.8em * var(--button-scale)); /* Adjusted width for the colored part */
@@ -143,12 +145,16 @@ iframe {
     margin: 1em 0 2.5em 0;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Responsive styles */
 @media (max-width: 700px) {
     header {
         flex-direction: column;
         align-items: center;
-	margin-left: 0;
+        margin-left: 0;
         margin-bottom: 0;
     }
 
@@ -157,6 +163,11 @@ iframe {
     }
 
     body {
-        height: 125vh; /* Full viewport height */
+        min-height: 125vh; /* Ensure body covers at least full viewport height */
+        padding-bottom: 3em; /* Add padding to avoid footer overlap */
+    }
+
+    .button-container {
+        gap: 1em; /* Adjust gap for mobile */
     }
 }

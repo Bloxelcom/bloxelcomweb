@@ -18,9 +18,10 @@
                 { name: "Bloxeleste (WBLX-TV)", stream: "bloxeleste", url: "hls/Bloxeleste.m3u8" },
                 { name: "Bloxeleste Canada (CBLX-TV)", stream: "bloxeleste-ca", url: "hls/BloxelesteCA.m3u8" },
                 { name: "Bloxeleste Anime (ブロクセレストアニメ)", stream: "bloxeleste-anime", url: "hls/BloxelesteAnime.m3u8" },
-                { name: "Bloxeleste Toronto", stream: "bloxeleste-toronto", url: "hls/BloxelesteToronto.m3u8" },
+                { name: "Bloxeleste Gaming", stream: "bloxeleste-gaming", url: "hls/BloxelesteGaming.m3u8" },
                 { name: "TV10", stream: "tv10", url: "hls/TV10.m3u8" },
                 { name: "TV3", stream: "tv3", url: "hls/TV3.m3u8" },
+                { name: "AirbenzTV Test", stream: "airbenzhls", url: "hls/AirbenzTV.m3u8" },
             ];
 
             // Map each button to its URL
@@ -28,12 +29,13 @@
                 "bloxeleste": "./channels/bloxeleste",
                 "bloxeleste-ca": "./channels/bloxeleste-ca",
                 "bloxeleste-anime": "./channels/bloxeleste-anime",
-                "bloxeleste-toronto": "./channels/bloxeleste-toronto",
+                "bloxeleste-gaming": "./channels/bloxeleste-gaming",
                 "tv10": "./channels/tv10",
                 "tv3": "./channels/tv3",
+                "airbenzhls": "./channels/airbenz",
             };
 
-            const iframe = document.querySelector('iframe');
+            const iframe = document.querySelector('#channel-frame');
 
             // Function to update the iframe and URL
             function updateChannel(stream) {
@@ -88,6 +90,20 @@
                     updateChannel(channel.stream);
                 });
             });
+
+            // Detect mobile user agent and update behavior
+            if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+                // Hide the iframe for mobile users
+                iframe.classList.add('hidden');
+
+                document.querySelectorAll('.custom-button').forEach(button => {
+                    const stream = button.classList[1]; // Assuming the stream class is the second class
+                    button.addEventListener('click', function() {
+                        const url = buttonUrls[stream] || 'about:blank';
+                        window.location.href = url;
+                    });
+                });
+            }
         });
     </script>
 </head>
@@ -123,11 +139,11 @@
                 <span class="button-subtext">BloxelesteAnime CH 3</span>
             </div>
         </button>
-        <button class="custom-button bloxeleste-toronto">
+        <button class="custom-button bloxeleste-gaming">
             <div class="color-part"></div>
             <div class="button-content">
-                <img class="button-image" src="/images/logos/bloxeleste-toronto.png" alt="Button Logo" style="width: 4.3em; height: auto;">
-                <span class="button-text">Bloxeleste Toronto</span>
+                <img class="button-image" src="/images/logos/bloxeleste-gaming.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">Bloxeleste Gaming</span>
                 <span class="button-subtext">CBTR-TV CH 4</span>
             </div>
         </button>
@@ -137,7 +153,7 @@
                 <div class="button-content">
                 <img class="button-image" src="/images/unsorted/old-logos/bloxelodeon.png" alt="Button Logo" style="width: 4.3em; height: auto;">
                     <span class="button-text">Bloxeleste Polska</span>
-                    <span class="button-subtext">(Zewnętrzny) CH 5</span>
+                    <span class="button-subtext">Zewnętrzny CH 5</span>
                 </div>
             </button>
         </a>
@@ -158,7 +174,7 @@
             </div>
         </button>
         <a href="https://dlive.tv/lionvert">
-            <button class="custom-button airbenz">
+            <button class="custom-button airbenzexternal">
                 <div class="color-part"></div>
                 <div class="button-content">
                     <img class="button-image" src="/images/partners/airbenz.webp" alt="Button Logo">
@@ -167,6 +183,14 @@
                 </div>
             </button>
         </a>
+        <button class="custom-button airbenzhls">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/partners/airbenz.webp" alt="Button Logo">
+                <span class="button-text">Airbenz TV (Test)</span>
+                <span class="button-subtext">Français TEST</span>
+            </div>
+        </button>
     </div>
     <iframe src="about:blank" id="channel-frame"></iframe>
     <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info <a href="/legal">here.</a></footer>

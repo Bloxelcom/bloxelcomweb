@@ -44,6 +44,12 @@ VIDEOS = [
                 'description': 'Bloxeleste Anime content stream.'
             },
             {
+                'title': 'Bloxeleste Gaming',
+                'url': 'https://www.bloxelcom.net/bloxelcom-cable/hls/BloxelesteGaming.m3u8',
+                'poster': os.path.join(POSTER_DIR, 'bloxelestegaming.png'),
+                'description': 'Bloxeleste Canada content stream.'
+            },
+            {
                 'title': 'TV10 (Español)',
                 'url': 'https://www.bloxelcom.net/bloxelcom-cable/hls/TV10.m3u8',
                 'poster': os.path.join(POSTER_DIR, 'tv10.png'),

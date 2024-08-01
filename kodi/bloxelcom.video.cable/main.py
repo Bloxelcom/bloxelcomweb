@@ -27,19 +27,19 @@ VIDEOS = [
         'channels': [
             {
                 'title': 'Bloxeleste US',
-                'url': 'https://www.bloxelcom.net/bloxcable/hls/Bloxeleste.m3u8',
+                'url': 'https://www.bloxelcom.net/bloxelcom-cable/hls/Bloxeleste.m3u8',
                 'poster': os.path.join(POSTER_DIR, 'bloxeleste.png'),
                 'description': 'Bloxeleste US content stream.'
             },
             {
                 'title': 'Bloxeleste Canada',
-                'url': 'https://www.bloxelcom.net/bloxcable/hls/BloxelesteCA.m3u8',
+                'url': 'https://www.bloxelcom.net/bloxelcom-cable/hls/BloxelesteCA.m3u8',
                 'poster': os.path.join(POSTER_DIR, 'bloxelesteca.png'),
                 'description': 'Bloxeleste Canada content stream.'
             },
             {
                 'title': 'Bloxeleste Anime',
-                'url': 'https://www.bloxelcom.net/bloxcable/hls/BloxelesteAnime.m3u8',
+                'url': 'https://www.bloxelcom.net/bloxelcom-cable/hls/BloxelesteAnime.m3u8',
                 'poster': os.path.join(POSTER_DIR, 'bloxelesteanime.png'),
                 'description': 'Bloxeleste Anime content stream.'
             },
@@ -51,13 +51,13 @@ VIDEOS = [
             },
             {
                 'title': 'TV10 (Español)',
-                'url': 'https://www.bloxelcom.net/bloxcable/hls/TV10.m3u8',
+                'url': 'https://www.bloxelcom.net/bloxelcom-cable/hls/TV10.m3u8',
                 'poster': os.path.join(POSTER_DIR, 'tv10.png'),
                 'description': 'TV10 content stream.'
             },
             {
                 'title': 'TV3',
-                'url': 'https://www.bloxelcom.net/bloxcable/hls/TV3.m3u8',
+                'url': 'https://www.bloxelcom.net/bloxelcom-cable/hls/TV3.m3u8',
                 'poster': os.path.join(POSTER_DIR, 'tv3.png'),
                 'description': 'TV3 content stream.'
             },

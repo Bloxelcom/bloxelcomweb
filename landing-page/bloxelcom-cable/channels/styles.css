@@ -16,7 +16,7 @@ body, html {
     align-items: center;
 }
 
-.video-container; .image-container {
+.video-container, .image-container {
     width: 100%;
     display: flex;
     justify-content: center;

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BloxelesteAnime</title>
+<title>Bloxeleste Anime</title>
 <link rel="stylesheet" href="../styles.css">
 <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
 </head>
@@ -15,7 +15,7 @@
         class="video-js vjs-fluid"
         controls
         preload="auto"
-	width="1280"
+        width="1280"
         height="720"
         autoplay
         poster="MY_VIDEO_POSTER.jpg"
@@ -40,7 +40,7 @@
     var imageContainer = document.getElementById('image-container');
     var fallbackImage = document.getElementById('fallback-image');
 
-    videoElement.addEventListener('error', function() {
+    function handleVideoError() {
       videoContainer.style.display = 'none';
       imageContainer.style.display = 'flex';
 
@@ -55,7 +55,16 @@
           fallbackImage.style.height = 'auto';
         }
       };
-    });
+    }
+
+    function handleVideoPlaying() {
+      videoContainer.style.display = 'block';
+      imageContainer.style.display = 'none';
+    }
+
+    videoElement.addEventListener('error', handleVideoError);
+    videoElement.addEventListener('canplay', handleVideoPlaying);
+    videoElement.addEventListener('playing', handleVideoPlaying);
   </script>
 </body>
 </html>

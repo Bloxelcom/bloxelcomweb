@@ -40,7 +40,7 @@
     var imageContainer = document.getElementById('image-container');
     var fallbackImage = document.getElementById('fallback-image');
 
-    videoElement.addEventListener('error', function() {
+    function handleVideoError() {
       videoContainer.style.display = 'none';
       imageContainer.style.display = 'flex';
 
@@ -55,7 +55,16 @@
           fallbackImage.style.height = 'auto';
         }
       };
-    });
+    }
+
+    function handleVideoPlaying() {
+      videoContainer.style.display = 'block';
+      imageContainer.style.display = 'none';
+    }
+
+    videoElement.addEventListener('error', handleVideoError);
+    videoElement.addEventListener('canplay', handleVideoPlaying);
+    videoElement.addEventListener('playing', handleVideoPlaying);
   </script>
 </body>
 </html>

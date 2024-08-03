@@ -81,7 +81,7 @@ a.button-container {
 .tv10 .color-part { background-color: #FAA357; }
 .tv3 .color-part { background-color: #47e5ab; }
 .airbenzexternal .color-part { background-color: #ED761A; }
-.airbenzhls .color-part { background-color: #ED761A; }
+.airbenz .color-part { background-color: #ED761A; }
 
 .color-part {
     width: calc(1.8em * var(--button-scale)); /* Adjusted width for the colored part */

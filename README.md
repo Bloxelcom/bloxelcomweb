@@ -39,7 +39,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 You are not allowed to distribute this program with our banding. Our branding
 remains under copyright.
 
-for outlines of usage of the logos, check here:
+For outlines of usage of the logos, check here:
 https://github.com/Bloxelcom/bloxelcomweb/blob/main/logos/LICENSE
 
 

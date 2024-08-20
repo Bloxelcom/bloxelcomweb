@@ -1,9 +1,11 @@
+# THIS REPO HAS SINCE BEEN ARCHIVED AND WILL NOT BE MAINTAINED ANY LONGER.
+
 # Bloxelcom Webpages
 This repo contains all resources related to the
 Bloxelcom landing page, including BloxelcomCable.
 
 Code Written initially written by 
-Freecorn1854 (with the help of ChatGPT), and
+Freecorn1854 (with the help of ChatGPT), and was
 continued and revised by Jimbo.
 
 Special thanks to "video.js", "nginx", and "OBS"
@@ -13,14 +15,6 @@ https://videojs.com/
 https://nginx.org/
 https://obsproject.com/
 ## Access Bloxelcom's landing page [here](https://www.bloxelcom.net), and BloxelcomCable [here.](https://www.bloxelcom.net/bloxelcom-cable/)
-
-# Contribute to the project!
-
-make sure you only commit to the "staging" branch, if you commit to main,
-we are going to have a bad time. main is the stable release shown on
-bloxelcom.net while staging is unstable.
-
-
 
 ### Licensing
 This program is free software: you can redistribute it and/or modify

@@ -44,6 +44,11 @@
             </a>
         </main>
     </div>
-    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. You are viewing the legal info.</footer>
+    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info 
+	    <a href="/legal">here.</a> | Time to final shutdown: <span id="countdown"></span></footer>
+    <script>
+	    let d=new Date("Sep 2, 2024 14:00:00").getTime();
+	    setInterval(()=>{let n=new Date().getTime(),r=d-n,t=Math.floor(r/864e5)+"d "+Math.floor((r%864e5)/36e5)+"h "+Math.floor((r%36e5)/6e4)+"m "+Math.floor((r%6e4)/1e3)+"s ";document.getElementById("countdown").innerHTML=r<0?"EXPIRED":t},1e3);
+    </script>
 </body>
 </html>

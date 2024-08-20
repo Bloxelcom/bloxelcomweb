@@ -12,7 +12,7 @@ for powering the backend to BloxelcomCable.
 https://videojs.com/
 https://nginx.org/
 https://obsproject.com/
-## Access Bloxelcom's landing page [here](https://www.bloxelcom.net), and BloxelcomCable [here.](https://www.bloxelcom.net/BloxelcomCable/)
+## Access Bloxelcom's landing page [here](https://www.bloxelcom.net), and BloxelcomCable [here.](https://www.bloxelcom.net/bloxelcom-cable/)
 
 # Contribute to the project!
 
@@ -39,7 +39,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 You are not allowed to distribute this program with our banding. Our branding
 remains under copyright.
 
-for outlines of usage of the logos, check here:
+For outlines of usage of the logos, check here:
 https://github.com/Bloxelcom/bloxelcomweb/blob/main/logos/LICENSE
 
 

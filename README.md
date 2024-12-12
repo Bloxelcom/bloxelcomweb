@@ -1,5 +1,3 @@
-# THIS REPO HAS SINCE BEEN ARCHIVED AND WILL NOT BE MAINTAINED ANY LONGER.
-
 # Bloxelcom Webpages
 This repo contains all resources related to the
 Bloxelcom landing page, including BloxelcomCable.

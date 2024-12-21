@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="bloxelcom.video.cable"
+version="2.0"
+name="BloxelcomCable"
+provider-name="Freecorn1854, Jimbo, Roman_V_M (OG Project)">
+<requires>
+  <import addon="xbmc.python" version="3.0.1"/>
+</requires>
+<extension point="xbmc.python.pluginsource" library="main.py">
+  <provides>video</provides>
+</extension>
+<extension point="xbmc.addon.metadata">
+  <summary lang="en_GB">BloxelcomCable addon for Kodi</summary>
+  <description lang="en_GB">BloxelcomCable programming for the Kodi program</description>
+  <disclaimer lang="en_GB">Copyright Bloxelcom 2024.</disclaimer>
+  <license>GPL-3.0-only	</license>
+  <assets>
+    <icon>resources/images/icon.png</icon>
+    <fanart>resources/images/fanart.png</fanart>
+
+  </assets>
+</extension>
+</addon>

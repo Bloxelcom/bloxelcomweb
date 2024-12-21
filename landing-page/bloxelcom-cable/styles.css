@@ -1,0 +1,173 @@
+:root {
+    --button-scale: 2; /* Change this value to scale the button */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Stack button rows vertically */
+    align-items: center; /* Center horizontally */
+    margin: 0; /* Remove default margin */
+    overflow-x: hidden;
+    min-height: 100vh; /* Minimum height to ensure it covers the viewport */
+    background: linear-gradient(0deg, #15351c, #118e2a) no-repeat center center fixed;
+    font-family: 'Segoe UI', 'Tahoma', 'Geneva', 'Verdana', sans-serif;
+    color: white;
+    padding-bottom: 2em; /* Add some padding to ensure space for footer */
+}
+
+header {
+    position: relative; /* Relative positioning within the document flow */
+    display: flex;
+    align-items: center;
+    padding: 1.25em;
+    flex-wrap: wrap;
+    width: 100%; /* Full width */
+    margin-left: 2em;
+    margin-bottom: 1em; /* Add margin to separate from the button container */
+}
+
+header img {
+    height: 5em;
+    margin-right: 1.25em;
+    border-radius: 0.625em;
+}
+
+a.button-container {
+    text-decoration: none; /* Removes the underline from links */
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping of buttons to the next line */
+    justify-content: center; /* Center buttons horizontally within the container */
+    max-width: calc(13em * var(--button-scale) * 3 + 2em); /* Max width for 3 buttons plus gap */
+    gap: 1em; /* Space between buttons */
+}
+
+.custom-button {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 0.2em solid #ddd;
+    border-radius: 0.5em;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    width: calc(14.5em * var(--button-scale)); /* Adjust the base width as needed */
+    height: calc(3em * var(--button-scale)); /* Adjusted height to fit two lines of text */
+    transition: filter 0.3s, opacity 0.3s, transform 0.3s; /* Smooth transition for greyscale, opacity, and transform */
+}
+
+.custom-button:hover {
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.custom-button.selected {
+    transform: scale(1.05); /* Keep the button enlarged */
+    border-color: #007BFF; /* Optional: Add a border color to indicate selection */
+}
+
+.button-offline {
+    filter: grayscale(40%) contrast(100%); /* Greyscale effect */
+    opacity: 0.5; /* Reduced opacity */
+}
+
+/* Color classes for buttons */
+.bloxeleste .color-part { background-color: #006BC8; }
+.bloxeleste-ca .color-part { background-color: #D80038; }
+.bloxeleste-gaming .color-part { background-color: #F54E31; }
+.bloxeleste-anime .color-part { background-color: #D9BFFF; }
+.bloxeleste-polska .color-part { background-color: #F00; }
+.tv10 .color-part { background-color: #FAA357; }
+.tv3 .color-part { background-color: #47e5ab; }
+.airbenzexternal .color-part { background-color: #ED761A; }
+.airbenz .color-part { background-color: #ED761A; }
+
+.color-part {
+    width: calc(1.8em * var(--button-scale)); /* Adjusted width for the colored part */
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1; /* Ensure this is behind the content */
+}
+
+.button-content {
+    display: flex;
+    flex-direction: column; /* Stack text lines vertically */
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    margin-left: calc(1.8em * var(--button-scale)); /* Space for the colored part */
+    position: relative;
+    z-index: 2; /* Ensure this is above the colored part */
+    flex: 1;
+    height: 100%; /* Ensure it fills the button's height */
+    padding: 0 0.5em; /* Optional: add padding for spacing */
+}
+
+.button-content .button-text {
+    font-size: calc(1em * var(--button-scale));
+    color: #333;
+    white-space: nowrap; /* Ensure the text doesn't wrap */
+}
+
+.button-content .button-subtext {
+    font-size: calc(0.75em * var(--button-scale)); /* Slightly smaller font size */
+    color: #666; /* Slightly lighter color */
+    white-space: nowrap; /* Ensure the text doesn't wrap */
+}
+
+.button-content .button-image {
+    position: absolute;
+    left: calc(-1.2em * var(--button-scale)); /* Adjust image positioning */
+    height: calc(2em * var(--button-scale)); /* Adjust the height as needed */
+    z-index: 2; /* Ensure this is above the colored part */
+}
+
+.image-container {
+    justify-content: center;
+}
+
+.image-container img {
+    width: 83%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: min(100vh);
+    margin: 1em;
+}
+
+iframe {
+    width: 80%;
+    height: 55vh;
+    border: none;
+    margin: 1em 0 2.5em 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    header img {
+        margin-right: 0;
+    }
+
+    body {
+        min-height: 125vh; /* Ensure body covers at least full viewport height */
+        padding-bottom: 3em; /* Add padding to avoid footer overlap */
+    }
+
+    .button-container {
+        gap: 1em; /* Adjust gap for mobile */
+    }
+}

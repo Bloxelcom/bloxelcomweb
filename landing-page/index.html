@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta property="og:title" content="AtomiteBloxelcom">
+<meta property="og:description" content="The official website for AtomiteBloxelcom.">
+<meta property="og:image" content="https://www.bloxelcom.net/images/logos/atomitebloxelcom.png">
+<meta property="og:url" content="https://www.bloxelcom.net">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtomiteBloxelcom Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <script>
+        // JavaScript to change the marquee text on refresh
+        window.onload = function() {
+            const marqueeText = [
+                "Look mom! I can do a marquee! :3",
+                "Uranus smells like farts!",
+                "ey' im walkin here!",
+                "pizzeria del gatito",
+                "Tis the season for Bloxeleste, fa la la la la, la la la la",
+            ];
+
+            // Select a random index from the array
+            const randomIndex = Math.floor(Math.random() * marqueeText.length);
+
+            // Get the marquee element and update its text
+            document.getElementById('dynamic-marquee').textContent = marqueeText[randomIndex];
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="/images/text-logos/bloxelcom-text.png" style="width: 60em; height: auto;" alt="Bloxelcom" class="mainlogo">
+            </div>
+            <marquee style="font-size: 50px;" id="dynamic-marquee"></marquee>
+        </header>
+        <main>
+            <a href="/bloxelcom" class="app-icon-link">
+                <div class="app-icon purple">
+                    <img src="/images/logos/bloxelcom-us.png" alt="bloxelcom">
+                    <p>Bloxelcom</p>
+                </div>
+            </a>
+            <a href="/atomite" class="app-icon-link">
+                <div class="app-icon yellow">
+                    <img src="/images/logos/atomite.png" alt="AtomiteMedia">
+                    <p>AtomiteMedia</p>
+                </div>
+            </a>
+            <a href="/bloxelcom-cable" class="app-icon-link">
+                <div class="app-icon green">
+                    <img src="/images/logos/bloxelcom-cable.png" alt="BloxelcomCable">
+                    <p>BloxelcomCable</p>
+                </div>
+            </a>
+            <a href="/aid" class="app-icon-link">
+                <div class="app-icon blue">
+                    <img src="/images/logos/aidlogo.png" alt="Our Aid Donations">
+                    <p>Our Aid Donations</p>
+                </div>
+            </a>
+            <a href="/ibu" class="app-icon-link">
+                <div class="app-icon red">
+                    <img src="/images/logos/ibu.png" alt="IBU Partners">
+                    <p>IBU Partners</p>
+                </div>
+            </a>
+        </main>
+    </div>
+    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info <a href="/legal">here.</a></footer>
+</body>
+</html>

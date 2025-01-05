@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxelcom Atari 2600 Emulator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #111;
+            color: #fff;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color: #222;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            max-width: 800px;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            max-width: 640px;
+            height: 480px;
+            margin: 20px 0;
+        }
+
+        select {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            max-width: 300px; /* Limit the dropdown menu width */
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+
+        footer {
+            padding: 10px;
+            margin-top: auto;
+            background-color: #222;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bloxelcom Atari 2600 Emulator</h1>
+        <p>Powered by Javatari</p>
+        <p>Controls: Arrow Keys for joystick, Spacebar for Fire.</p>
+    </header>
+
+    <main>
+        <select id="romSelector">
+            <option value="">Select a ROM</option>
+        </select>
+        <button onclick="loadROM()">Load ROM</button>
+
+        <iframe id="javatariFrame" src="" title="Javatari Emulator"></iframe>
+
+        <p id="status">Status: Waiting for ROM...</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bloxelcom. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const romDirectory = 'https://www.bloxelcom.net/roms/2600/';
+        const romSelector = document.getElementById('romSelector');
+        const statusElement = document.getElementById('status');
+        const javatariFrame = document.getElementById('javatariFrame');
+
+        // Decode and clean up ROM names
+        function cleanROMName(name) {
+            return decodeURIComponent(name)
+                .replace(/\+/g, ' ')
+                .replace(/\%20/g, ' ')
+                .replace(/\.(bin|BIN)$/, '')
+                .replace(/\%28/g, '(')
+                .replace(/\%29/g, ')')
+                .replace(/\%27/g, "'");
+        }
+
+        // Fetch ROM list from server
+        async function fetchROMs() {
+            try {
+                const response = await fetch(romDirectory);
+                if (!response.ok) throw new Error('Failed to fetch ROM list');
+
+                const text = await response.text();
+                const parser = new DOMParser();
+                const htmlDocument = parser.parseFromString(text, 'text/html');
+                const links = htmlDocument.querySelectorAll('a');
+
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href.endsWith('.bin')) {
+                        const option = document.createElement('option');
+                        option.value = romDirectory + href;
+                        option.textContent = cleanROMName(href);
+                        romSelector.appendChild(option);
+                    }
+                });
+            } catch (error) {
+                console.error('Error fetching ROMs:', error);
+                statusElement.textContent = 'Error fetching ROM list';
+            }
+        }
+
+        // Load selected ROM
+        function loadROM() {
+            const selectedROM = romSelector.value;
+            if (!selectedROM) {
+                alert('Please select a ROM to load.');
+                return;
+            }
+
+            const emulatorURL = `https://javatari.org/?ROM=${encodeURIComponent(selectedROM)}`;
+            javatariFrame.src = emulatorURL;
+            statusElement.textContent = `Loaded: ${cleanROMName(selectedROM)}`;
+        }
+
+        // Initialize ROM list on page load
+        window.onload = fetchROMs;
+    </script>
+</body>
+</html>
+

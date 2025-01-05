@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta property="og:title" content="IBU">
+<meta property="og:description" content="Partners of the IBU">
+<meta property="og:image" content="https://www.bloxelcom.net/images/logos/ibu.png">
+<meta property="og:url" content="https://www.bloxelcom.net/ibu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBU Partners</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="/" class="app-icon-link">
+                    <img src="/images/text-logos/ibu-text.png" style="width: 35em; height: auto;" alt="IBU" class="sublogo">
+                </a>
+            </div>
+            <h1>AtomiteBloxelcom is a part of the Independent Broadcasters Union. These are the links of our partners.</h1>
+
+            <!-- Music Toggle Section -->
+            <div id="music-control" style="text-align: center; margin-top: 15px; font-size: 18px; cursor: pointer;">
+                <span id="music-icon" style="font-size: 24px;">🔇</span>
+                <span id="music-text">Unmute background music</span>
+            </div>
+        </header>
+        <main>
+            <a href="https://tv3-cl.ddns.net" class="app-icon-link">
+                <div class="app-icon contact">
+                    <img src="/images/partners/tv3-512.png" alt="TV3">
+                    <p>Go to TV3s website.</p>
+                </div>
+            </a>
+            <a href="https://tv10.com.ar" class="app-icon-link">
+                <div class="app-icon contact">
+                    <img src="/images/partners/tv10-512.png" alt="TV10">
+                    <p>Go to TV10s website.</p>
+                </div>
+            </a>
+            <a href="https://freecorn1854.win/corntv" class="app-icon-link">
+                <div class="app-icon contact">
+                    <img src="/images/partners/corntv-512.png" alt="CornTV">
+                    <p>Go to CornTVs website.</p>
+                </div>
+            </a>
+            <a href="https://televisie1.neocities.org" class="app-icon-link">
+                <div class="app-icon contact">
+                    <img src="/images/partners/televisie1.png" alt="Televisie1">
+                    <p>Go to Televisie1's website.</p>
+                </div>
+            </a>
+        </main>
+    </div>
+    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info <a href="/legal">here.</a></footer>
+
+    <!-- Audio Element -->
+    <audio id="background-music" src="background.mp3" loop></audio>
+    
+    <script>
+        // Background music toggle functionality
+        const musicIcon = document.getElementById('music-icon');
+        const musicText = document.getElementById('music-text');
+        const music = document.getElementById('background-music');
+        let isPlaying = false;
+
+        document.getElementById('music-control').addEventListener('click', () => {
+            if (isPlaying) {
+                music.pause();
+                musicIcon.textContent = '🔇'; // Set to muted icon
+                musicText.textContent = 'Unmute background music'; // Set to unmute text
+            } else {
+                music.play();
+                musicIcon.textContent = '🔊'; // Set to playing icon
+                musicText.textContent = 'Mute background music'; // Set to mute text
+            }
+            isPlaying = !isPlaying; // Toggle state
+        });
+    </script>
+</body>
+</html>
+

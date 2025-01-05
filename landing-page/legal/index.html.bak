@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta property="og:title" content="AtomiteBloxelcom Legal">
+<meta property="og:description" content="Legal info for AtomiteBloxelcom and its Services.">
+<meta property="og:image" content="https://www.bloxelcom.net/images/logos/bloxelcom.png">
+<meta property="og:url" content="https://www.bloxelcom.net">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxelcom Legal</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="/" class="app-icon-link">
+                    <img src="/images/text-logos/bloxelcom-text.png" style="width: 35em; height: auto;" alt="Bloxelcom US" class="sublogo">
+		</a>
+            </div>
+	    <h2>AtomiteBloxelcom makes our website code freely available and under the GPL-3.0 licence.<br>Our branding is under the CC BY-ND license for entities and people outside of AtomiteBloxelcom. The logos under this license will be in the logos folder on our GitHub repo.</h2>
+        </header>
+        <main>
+            <a href="https://www.gnu.org/licenses/gpl-3.0.html" class="app-icon-link">
+                <div class="app-icon red">
+                    <img src="/images/offsite/gplv3-or-later.png" alt="GPL 3.0 or later">
+                    <p>View the GPL-3.0 License.</p>
+                </div>
+            </a>
+            <a href="https://github.com/Bloxelcom/bloxelcomweb/blob/main/logos/LICENSE" class="app-icon-link">
+                <div class="app-icon yellow">
+                    <img src="/images/offsite/legal.png" alt="Legal">
+                    <p>View the Bloxelcom Copyright License.</p>
+                </div>
+            </a>
+            <a href="https://github.com/Bloxelcom" class="app-icon-link">
+                <div class="app-icon contact">
+                    <img src="/images/offsite/github.png" alt="Github">
+                    <p>Find our code on Github</p>
+                </div>
+            </a>
+        </main>
+    </div>
+    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. You are viewing the legal info.</footer>
+</body>
+</html>

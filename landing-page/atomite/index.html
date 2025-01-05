@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta property="og:title" content="AtomiteMedia">
+<meta property="og:description" content="Media services for everyone around the world provided by Bloxelcom US.">
+<meta property="og:image" content="https://www.bloxelcom.net/images/logos/atomite.png">
+<meta property="og:url" content="https://www.bloxelcom.net/atomite">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AtomiteMedia</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="../" class="app-icon-link">
+                    <img src="/images/text-logos/atomite-text.png" style="width: 35em; height: auto;" alt="AtomiteMedia" class="sublogo">
+                </a>
+            </div>
+            <h1>Media services for everyone around the world provided by AtomiteMedia.</h1>
+
+            <!-- Music Toggle Section -->
+            <div id="music-control" style="text-align: center; margin-top: 15px; font-size: 18px; cursor: pointer;">
+                <span id="music-icon" style="font-size: 24px;">🔇</span>
+                <span id="music-text">Unmute background music</span>
+            </div>
+        </header>
+        <main>
+            <a href="https://radio.bloxelcom.net/public/wytp" class="app-icon-link">
+                <div class="app-icon red">
+                    <img src="/images/logos/wytp.png" alt="WYTP Radio">
+                    <p>WYTP Radio</p>
+                </div>
+            </a>
+            <a href="https://radio.bloxelcom.net/public/wtrf" class="app-icon-link">
+                <div class="app-icon green">
+                    <img src="/images/logos/wtrf.png" alt="WTRF Radio">
+                    <p>WTRF Radio</p>
+                </div>
+            </a>
+            <a href="https://radio.bloxelcom.net/public/watm" class="app-icon-link">
+                <div class="app-icon blue">
+                    <img src="/images/logos/watm.png" alt="WATM Radio">
+                    <p>WATM Radio</p>
+                </div>
+            </a>
+        </main>
+    </div>
+    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info <a href="/legal">here.</a></footer>
+
+    <!-- Audio Element -->
+    <audio id="background-music" src="background.mp3" loop></audio>
+    
+    <script>
+        // Background music toggle functionality
+        const musicIcon = document.getElementById('music-icon');
+        const musicText = document.getElementById('music-text');
+        const music = document.getElementById('background-music');
+        let isPlaying = false;
+
+        document.getElementById('music-control').addEventListener('click', () => {
+            if (isPlaying) {
+                music.pause();
+                musicIcon.textContent = '🔇'; // Set to muted icon
+                musicText.textContent = 'Unmute background music'; // Set to unmute text
+            } else {
+                music.play();
+                musicIcon.textContent = '🔊'; // Set to playing icon
+                musicText.textContent = 'Mute background music'; // Set to mute text
+            }
+            isPlaying = !isPlaying; // Toggle state
+        });
+    </script>
+</body>
+</html>
+

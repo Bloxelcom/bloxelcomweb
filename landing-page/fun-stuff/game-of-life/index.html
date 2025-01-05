@@ -1,0 +1,41 @@
+ <!--
+ game-of-life is a pure JavaScript/HTML/CSS implementation of Conway's Game of Life
+Copyright (C) 2017 Nikolaos Moumoulidis
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Game of Life</title>
+
+	<link rel="stylesheet" href="gol.css">
+	<script type="text/javascript" src="gol.js"></script>
+</head>
+
+<body class="general">
+    <h1 class="allignment" >Conway's Game of Life</h1>
+
+    <p class="allignment" >Click on cells to set them alive and draw patterns. When you're ready, click the 'Start Life' button.</p>
+    <p class="allignment" >For examples of patterns, look <a target="_blank" href="https://en.wikipedia.org/wiki/Conway's_Game_of_Life#Examples_of_patterns">here</a>.</p>
+    <p class="allignment" >Original by nikosmoum on <a href="https://github.com/nikosmoum/game-of-life">GitHub</a> under GPLv3.</p>
+    <div class="allignment">
+        <button id="startBtn" type="button" class="buttons">Start Life!</button>
+        <button id="resetBtn" type="button" class="buttons">Reset</button>
+    </div>
+    <p></p>
+</body>
+
+</html>

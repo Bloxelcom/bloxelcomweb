@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webamp Player</title>
+    <style>
+        body {
+            background-color: #008080; /* Teal background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #app {
+            width: 400px; /* Set the width of the Webamp player */
+            height: 300px; /* Set the height of the Webamp player */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/webamp"></script>
+    <script>
+        const app = document.getElementById("app");
+
+        // Initialize Webamp player
+        const webamp = new Webamp();
+        webamp.renderWhenReady(app);
+    </script>
+
+</body>
+</html>
+

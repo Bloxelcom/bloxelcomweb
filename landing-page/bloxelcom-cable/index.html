@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloxelcomCable</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/footer.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta property="og:title" content="Bloxelcom Cable">
+    <meta property="og:description" content="All of Bloxelcom's provided and partnered channels.">
+    <meta property="og:image" content="https://www.bloxelcom.net/images/logos/bloxelcom-cable.png">
+    <meta property="og:url" content="https://www.bloxelcom.net/bloxelcom-cable">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const channels = [
+                { name: "Bloxeleste (WBLX-TV)", stream: "bloxeleste", url: "hls/Bloxeleste.m3u8" },
+                { name: "Bloxeleste Anime (ブロクセレストアニメ)", stream: "bloxeleste-anime", url: "hls/BloxelesteAnime.m3u8" },
+                { name: "Bloxel90s", stream: "bloxel90s", url: "hls/Bloxel90s.m3u8" },
+                { name: "TV3 Chile", stream: "tv3-cl", url: "hls/tv3-cl.m3u8" },
+                { name: "TV10", stream: "tv10", url: "hls/tv10.m3u8" },
+                { name: "CornTV", stream: "corntv", url: "hls/CornTV.m3u8" },
+                { name: "Televisie1", stream: "tel1", url: "hls/hollandse1997.m3u8" },
+            ];
+
+            // Map each button to its URL
+            const buttonUrls = {
+                "bloxeleste": "./channels/bloxeleste",
+                "bloxeleste-anime": "./channels/bloxeleste-anime",
+                "bloxel90s": "./channels/bloxel90s",
+                "tv3-cl": "./channels/tv3-cl",
+                "tv10": "./channels/tv10",
+                "corntv": "./channels/corntv",
+                "tel1": "./channels/tel1",
+            };
+
+            const iframe = document.querySelector('#channel-frame');
+
+            // Function to update the iframe and URL
+            function updateChannel(stream) {
+                const url = buttonUrls[stream] || 'about:blank';
+                iframe.src = url;
+                history.pushState(null, '', `?channel=${stream}`);
+                
+                // Remove 'selected' class from all buttons
+                document.querySelectorAll('.custom-button').forEach(button => {
+                    button.classList.remove('selected');
+                });
+
+                // Add 'selected' class to the clicked button
+                const button = document.querySelector(`.custom-button.${stream}`);
+                button.classList.add('selected');
+            }
+
+            // Function to check stream availability
+            function checkStreams() {
+                channels.forEach(channel => {
+                    const button = document.querySelector(`.custom-button.${channel.stream}`);
+                    fetch(channel.url, { method: 'HEAD' })
+                        .then(response => {
+                            if (response.ok) {
+                                button.classList.remove('button-offline');
+                            } else {
+                                button.classList.add('button-offline');
+                            }
+                        })
+                        .catch(() => {
+                            button.classList.add('button-offline');
+                        });
+                });
+            }
+
+            // Initial check
+            checkStreams();
+
+            // Set interval to check every 10 seconds
+            setInterval(checkStreams, 10000);
+
+            // Check if a channel is specified in the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const channel = urlParams.get('channel');
+            if (channel && buttonUrls[channel]) {
+                updateChannel(channel);
+            }
+
+            channels.forEach(channel => {
+                const button = document.querySelector(`.custom-button.${channel.stream}`);
+                button.addEventListener('click', function() {
+                    updateChannel(channel.stream);
+                });
+            });
+
+            // Detect mobile user agent and update behavior
+            if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)) {
+                // Hide the iframe for mobile users
+                iframe.classList.add('hidden');
+
+                document.querySelectorAll('.custom-button').forEach(button => {
+                    const stream = button.classList[1]; // Assuming the stream class is the second class
+                    button.addEventListener('click', function() {
+                        const url = buttonUrls[stream] || 'about:blank';
+                        window.location.href = url;
+                    });
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <a href="/" class="app-icon-link">
+            <img src="/images/text-logos/bloxelcom-cable-text-gradient-white.png" alt="Logo">
+        </a>
+        <h1>List of TV Channels</h1>
+    </header>
+    <div class="button-container">
+        <button class="custom-button bloxeleste">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/logos/bloxeleste.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">Bloxeleste</span>
+                <span class="button-subtext">WBLX-TV CH 1</span>
+            </div>
+        </button>
+        <button class="custom-button bloxeleste-anime">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/svgs/bloxeleste-anime.svg" style="width: 4.3em; height: auto;">
+                <span class="button-text">ブロクセレストアニメ</span>
+                <span class="button-subtext">BloxelesteAnime CH 2</span>
+            </div>
+        </button>
+        <button class="custom-button bloxel90s">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/logos/bloxel90s.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">Bloxel90s</span>
+                <span class="button-subtext">WBNT-TV CH 3</span>
+            </div>
+        </button>
+        <button class="custom-button tv3-cl">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/partners/tv3.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">TV3</span>
+                <span class="button-subtext">Chile CH 4</span>
+            </div>
+        </button>
+        <button class="custom-button tv10">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/partners/tv10.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">TV10</span>
+                <span class="button-subtext">Español CH 5</span>
+            </div>
+        </button>
+        <button class="custom-button corntv">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/partners/corntv.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">CornTV</span>
+                <span class="button-subtext">Canada CH 6</span>
+            </div>
+        </button>
+        <button class="custom-button tel1">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="/images/partners/televisie1.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">Televisie1</span>
+                <span class="button-subtext">United Kingdom CH 7</span>
+            </div>
+        </button>
+    <iframe src="about:blank" id="channel-frame"></iframe>
+    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info <a href="/legal">here.</a></footer>
+</body>
+</html>

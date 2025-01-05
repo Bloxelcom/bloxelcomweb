@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta property="og:title" content="Bloxelcom Aid">
+<meta property="og:description" content="List of Organization's that Bloxelcom has donated too">
+<meta property="og:image" content="https://www.bloxelcom.net/images/logos/aidlogo.png">
+<meta property="og:url" content="https://www.bloxelcom.net/aid">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloxelcom Aid</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <a href="/" class="app-icon-link">
+                    <img src="/images/text-logos/aid-text.png" alt="Bloxelcom Aid" class="sublogo">
+                </a>
+            </div>
+            <h1>List of organizations that Bloxelcom has donated to. Click for proof!</h1>
+
+            <!-- Music Toggle Section -->
+            <div id="music-control" style="text-align: center; margin-top: 15px; font-size: 18px; cursor: pointer;">
+                <span id="music-icon" style="font-size: 24px;">🔇</span>
+                <span id="music-text">Unmute background music</span>
+            </div>
+        </header>
+        <main>
+            <a href="/images/aidproof/unrwaproof.png" class="app-icon-link">
+                <div class="app-icon contact">
+                    <img src="/images/offsite/unrwa.png" alt="UNRWA">
+                    <p>UNRWA (Money in CAD)</p>
+                </div>
+            </a>
+        </main>
+    </div>
+    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info <a href="/legal">here</a></footer>
+
+    <!-- Audio Element -->
+    <audio id="background-music" src="background.mp3" loop></audio>
+    
+    <script>
+        // Background music toggle functionality
+        const musicIcon = document.getElementById('music-icon');
+        const musicText = document.getElementById('music-text');
+        const music = document.getElementById('background-music');
+        let isPlaying = false;
+
+        document.getElementById('music-control').addEventListener('click', () => {
+            if (isPlaying) {
+                music.pause();
+                musicIcon.textContent = '🔇'; // Set to muted icon
+                musicText.textContent = 'Unmute background music'; // Set to unmute text
+            } else {
+                music.play();
+                musicIcon.textContent = '🔊'; // Set to playing icon
+                musicText.textContent = 'Mute background music'; // Set to mute text
+            }
+            isPlaying = !isPlaying; // Toggle state
+        });
+    </script>
+</body>
+</html>
+

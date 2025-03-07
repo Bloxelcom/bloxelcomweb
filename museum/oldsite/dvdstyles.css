@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.bounce-box {
+    position: absolute;
+    animation: bounce 4s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(calc(100vh - 100px));
+    }
+}
+
+img {
+    width: 100px;
+    height: auto;
+}

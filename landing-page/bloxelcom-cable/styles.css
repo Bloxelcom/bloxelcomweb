@@ -73,15 +73,16 @@ a.button-container {
 }
 
 /* Color classes for buttons */
-.bloxeleste .color-part { background-color: #006BC8; }
+.bloxeleste1 .color-part { background-color: #006BC8; }
 .bloxeleste2 .color-part { background-color: #8e7cc3; }
-.bloxel90s .color-part { background-color: #D80038; }
-.bloxeleste-gaming .color-part { background-color: #F54E31; }
-.bloxeleste-anime .color-part { background-color: #D9BFFF; }
+.bloxelestemusic .color-part { background-color: #23779e; }
+.canal17 .color-part { background-color: #006BC8; }
 .corntv .color-part { background-color: #f5c531; }
 .tv10 .color-part { background-color: #FAA357; }
 .tv3-cl .color-part { background-color: #47e5ab; }
-.tel1 .color-part { background-color: #D80038; }
+.fusiontv .color-part { background-color: #161691; }
+.nixtv .color-part { background-color: #d32665; }
+
 
 .color-part {
     width: calc(1.8em * var(--button-scale)); /* Adjusted width for the colored part */

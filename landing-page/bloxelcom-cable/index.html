@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BloxelcomCable</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="/footer.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://www.bloxelcom.net/footer.css">
+    <link rel="icon" type="image/x-icon" href="https://www.bloxelcom.net/favicon.ico">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta property="og:title" content="Bloxelcom Cable">
     <meta property="og:description" content="All of Bloxelcom's provided and partnered channels.">
@@ -15,26 +15,28 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const channels = [
-                { name: "Bloxeleste (WBLX-TV)", stream: "bloxeleste", url: "hls/Bloxeleste.m3u8" },
+                { name: "Bloxeleste1", stream: "bloxeleste1", url: "hls/Bloxeleste1.m3u8" },
                 { name: "Bloxeleste2", stream: "bloxeleste2", url: "hls/Bloxeleste2.m3u8" },
-                { name: "Bloxeleste Anime (ブロクセレストアニメ)", stream: "bloxeleste-anime", url: "hls/BloxelesteAnime.m3u8" },
-                { name: "Bloxel90s", stream: "bloxel90s", url: "hls/Bloxel90s.m3u8" },
+                { name: "BloxelesteMusic", stream: "bloxelestemusic", url: "hls/BloxelesteMusic.m3u8" },
                 { name: "TV3 Chile", stream: "tv3-cl", url: "hls/tv3-cl.m3u8" },
                 { name: "TV10", stream: "tv10", url: "hls/tv10.m3u8" },
+                { name: "Canal 17", stream: "canal17", url: "hls/canal17.m3u8" },
                 { name: "CornTV", stream: "corntv", url: "hls/CornTV.m3u8" },
-                { name: "Televisie1", stream: "tel1", url: "hls/hollandse1997.m3u8" },
+                { name: "FusionTV", stream: "fusiontv", url: "hls/hollandse1997.m3u8" },
+                { name: "NixTV", stream: "nixtv", url: "hls/nixtv.m3u8" },
             ];
 
             // Map each button to its URL
             const buttonUrls = {
-                "bloxeleste": "./channels/bloxeleste",
+                "bloxeleste1": "./channels/bloxeleste1",
                 "bloxeleste2": "./channels/bloxeleste2",
-                "bloxeleste-anime": "./channels/bloxeleste-anime",
-                "bloxel90s": "./channels/bloxel90s",
+                "bloxelestemusic": "./channels/bloxelestemusic",
                 "tv3-cl": "./channels/tv3-cl",
                 "tv10": "./channels/tv10",
+                "canal17": "./channels/canal17",
                 "corntv": "./channels/corntv",
-                "tel1": "./channels/tel1",
+                "fusiontv": "./channels/fusiontv",
+                "nixtv": "./channels/nixtv",
             };
 
             const iframe = document.querySelector('#channel-frame');
@@ -112,77 +114,94 @@
 <body>
     <header>
         <a href="/" class="app-icon-link">
-            <img src="/images/text-logos/bloxelcom-cable-text-gradient-white.png" alt="Logo">
+            <img src="https://www.bloxelcom.net/images/text-logos/bloxelcom-cable-text-gradient-white.png" alt="Logo">
         </a>
         <h1>List of TV Channels</h1>
     </header>
     <div class="button-container">
-        <button class="custom-button bloxeleste">
+        <button class="custom-button bloxeleste1">
             <div class="color-part"></div>
             <div class="button-content">
-                <img class="button-image" src="/images/logos/bloxeleste.png" alt="Button Logo" style="width: 4.3em; height: auto;">
-                <span class="button-text">Bloxeleste</span>
-                <span class="button-subtext">WBLX-TV CH 1</span>
+                <img class="button-image" src="https://www.bloxelcom.net/images/logos/bloxeleste1.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">Bloxeleste1</span>
+                <span class="button-subtext">WBLX-TV 13.1 CH 1</span>
             </div>
         </button>
-    <div class="button-container">
+
         <button class="custom-button bloxeleste2">
             <div class="color-part"></div>
             <div class="button-content">
-                <img class="button-image" src="/images/logos/bloxeleste2.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <img class="button-image" src="https://www.bloxelcom.net/images/logos/bloxeleste2.png" alt="Button Logo" style="width: 4.3em; height: auto;">
                 <span class="button-text">Bloxeleste2</span>
-                <span class="button-subtext">CH 2</span>
+                <span class="button-subtext">WBLX-TV 13.2 CH 2</span>
             </div>
         </button>
-        <button class="custom-button bloxeleste-anime">
+
+        <button class="custom-button bloxelestemusic">
             <div class="color-part"></div>
             <div class="button-content">
-                <img class="button-image" src="/images/svgs/bloxeleste-anime.svg" style="width: 4.3em; height: auto;">
-                <span class="button-text">ブロクセレストアニメ</span>
-                <span class="button-subtext">BloxelesteAnime CH 3</span>
+                <img class="button-image" src="https://www.bloxelcom.net/images/logos/bloxelestemusic.png" style="width: 4.3em; height: auto;">
+                <span class="button-text">BloxelesteMusic</span>
+                <span class="button-subtext">Music CH 3</span>
             </div>
         </button>
-        <button class="custom-button bloxel90s">
-            <div class="color-part"></div>
-            <div class="button-content">
-                <img class="button-image" src="/images/logos/bloxel90s.png" alt="Button Logo" style="width: 4.3em; height: auto;">
-                <span class="button-text">Bloxel90s</span>
-                <span class="button-subtext">WBNT-TV CH 4</span>
-            </div>
-        </button>
+
         <button class="custom-button tv3-cl">
             <div class="color-part"></div>
             <div class="button-content">
-                <img class="button-image" src="/images/partners/tv3.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <img class="button-image" src="https://www.bloxelcom.net/images/partners/tv3.png" alt="Button Logo" style="width: 4.3em; height: auto;">
                 <span class="button-text">TV3</span>
-                <span class="button-subtext">Chile CH 5</span>
+                <span class="button-subtext">Chile CH 4</span>
             </div>
         </button>
+
         <button class="custom-button tv10">
             <div class="color-part"></div>
             <div class="button-content">
-                <img class="button-image" src="/images/partners/tv10.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <img class="button-image" src="https://www.bloxelcom.net/images/partners/tv10.png" alt="Button Logo" style="width: 4.3em; height: auto;">
                 <span class="button-text">TV10</span>
+                <span class="button-subtext">Español CH 5</span>
+            </div>
+        </button>
+
+        <button class="custom-button canal17">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="https://www.bloxelcom.net/images/partners/canal17.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">Canal 17</span>
                 <span class="button-subtext">Español CH 6</span>
             </div>
         </button>
+
         <button class="custom-button corntv">
             <div class="color-part"></div>
             <div class="button-content">
-                <img class="button-image" src="/images/partners/corntv.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <img class="button-image" src="https://www.bloxelcom.net/images/partners/corntv.png" alt="Button Logo" style="width: 4.3em; height: auto;">
                 <span class="button-text">CornTV</span>
                 <span class="button-subtext">Canada CH 7</span>
             </div>
         </button>
-        <button class="custom-button tel1">
+
+        <button class="custom-button fusiontv">
             <div class="color-part"></div>
             <div class="button-content">
-                <img class="button-image" src="/images/partners/televisie1.png" alt="Button Logo" style="width: 4.3em; height: auto;">
-                <span class="button-text">Televisie1</span>
+                <img class="button-image" src="https://www.bloxelcom.net/images/partners/televisie1.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">FusionTV</span>
                 <span class="button-subtext">United Kingdom CH 8</span>
             </div>
         </button>
+
+        <button class="custom-button nixtv">
+            <div class="color-part"></div>
+            <div class="button-content">
+                <img class="button-image" src="https://www.bloxelcom.net/images/partners/nixfox.png" alt="Button Logo" style="width: 4.3em; height: auto;">
+                <span class="button-text">NixTV</span>
+                <span class="button-subtext">Canada CH 9</span>
+            </div>
+        </button>
+    </div>
     <iframe src="about:blank" id="channel-frame"></iframe>
-    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info <a href="/legal">here.</a></footer>
+    <footer>&copy; Bloxelcom 2024. Website is under GPL-3.0 license. View legal info <a href="https://www.bloxelcom.net/legal">here.</a></footer>
 </body>
 </html>
+

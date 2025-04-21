@@ -37,7 +37,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 You are allowed to distribute this program with our banding. Our branding
-is under CC BY-SA-ND-NC, so all usages must be properly credited and not for commercial use.
+is under CC BY-SA-ND, so all usages must be properly credited and no derivitaves
 
 For outlines of usage of the logos, check here:
 https://github.com/Bloxelcom/bloxelcomweb/blob/main/logos/LICENSE
